@@ -8,9 +8,15 @@ const PreLoader = () => {
   return (
     <div className="preloader">
       <div className="texts-container">
-        <span>Designer,</span>
-        <span> Curator,</span>
-        <span> Developer.</span>
+        <span>R</span>
+        <span>e</span>
+        <span>y</span>
+        <span>e</span>
+        <span>w</span>
+        <span>s</span>
+        <span>s</span>
+        <span>s</span>
+        <span className="text-green-400 text-3xl ml-0.5">.</span>
       </div>
     </div>
   );

@@ -45,7 +45,7 @@ function Home() {
             exit={{ opacity: 0, scale: 0.5 }}
             whileTap={{ scale: 0.9 }}
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 bg-green-400/20 border border-green-400 text-white/80 p-3 rounded hover:bg-green-400/30 z-50 shadow-lg backdrop-blur-sm"
+            className="fixed cursor-pointer bottom-8 right-8 bg-green-400/20 border border-green-400 text-white/80 p-3 rounded hover:bg-green-400/30 z-50 shadow-lg backdrop-blur-sm"
             aria-label="Scroll to top"
           >
             <ChevronUp className="w-6 h-6" />

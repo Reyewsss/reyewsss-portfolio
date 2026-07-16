@@ -1,9 +1,16 @@
-@import "tailwindcss";
+/* @import url("https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100..900;1,100..900&family=Geist:ital,wght@0,100..900;1,100..900&display=swap"); */
 
-@import url("https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&family=Geist+Mono:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap");
+
+@import "tailwindcss";
 
 body {
   background-color: black;
+}
+
+@theme {
+  --font-geist-mono: "Geist Mono", monospace;
+  --font-geist: "Geist", sans-serif;
 }
 
 @layer components {
@@ -24,8 +31,8 @@ body {
   }
   /* For IE, Edge, and Firefox */
   .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   /* Custom Transparent Scrollbar */
@@ -42,13 +49,13 @@ body {
 
   /* Semi-transparent thumb */
   ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2); /* White with 20% opacity */
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 9999px;
     transition: background 0.2s ease;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.4); /* White with 40% opacity on hover */
+    background: rgba(255, 255, 255, 0.4);
   }
 
   /* Hide arrows/buttons */

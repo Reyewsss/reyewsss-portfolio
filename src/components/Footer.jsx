@@ -44,11 +44,11 @@ function Footer() {
               href="https://github.com/Reyewsss"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/60 hover:text-green-400 hover:border-green-400 transition-all duration-300"
+              className="text-xl md:text-2xl text-white/60 hover:text-green-400 hover:border-green-400 transition-all duration-300"
             >
               <FontAwesomeIcon
                 icon={faGithub}
-                className="w-5 h-5 md:w-6 md:h-6"
+                className="w-7 h-7 md:w-8 md:h-8"
               />
             </a>
           </li>
@@ -56,11 +56,11 @@ function Footer() {
           <li>
             <a
               href="mailto:reyesjundillmharcalagahan@gmail.com"
-              className="text-white/60 hover:text-green-400 hover:border-green-400 transition-all duration-300"
+              className="text-xl md:text-2xl text-white/60 hover:text-green-400 hover:border-green-400 transition-all duration-300"
             >
               <FontAwesomeIcon
                 icon={faEnvelope}
-                className="w-5 h-5 md:w-6 md:h-6"
+                className="w-7 h-7 md:w-8 md:h-8"
               />
             </a>
           </li>

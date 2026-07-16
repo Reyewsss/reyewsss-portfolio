@@ -4,6 +4,7 @@ import TextType from "../components/Animations/TextType";
 import { motion as m } from "framer-motion";
 import { Suspense, lazy, useEffect, useRef, useState } from "react";
 const Spline = lazy(() => import("@splinetool/react-spline"));
+import image_preview from "../assets/images/3d-preview.jpg";
 
 function Hero() {
   const splineContainerRef = useRef(null);
@@ -139,7 +140,7 @@ function Hero() {
               <button
                 whileTap={{ scale: 0.9 }}
                 onClick={scrollToNextSection}
-                className="bg-green-400/20 border border-green-400 text-white/80 px-6 py-3 rounded-lg hover:bg-green-400/30 transition-all duration-300"
+                className="bg-green-400/20 cursor-pointer border border-green-400 text-white/80 px-6 py-3 rounded-lg hover:bg-green-400/30 transition-all duration-300"
               >
                 See the work
               </button>
@@ -169,10 +170,13 @@ function Hero() {
                   />
                 </Suspense>
               ) : isMobile ? (
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-green-400/20 to-green-400/5 border border-green-400/20 flex items-center justify-center">
-                  <span className="text-green-400/60 text-xs font-geist-mono">
-                    3D preview available on desktop
-                  </span>
+                <div className="w-full h-full rounded-full flex items-center justify-center">
+                  <img
+                    src={image_preview}
+                    alt={image_preview}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
+                  />
                 </div>
               ) : (
                 <div className="w-full h-full rounded-full bg-green-400/10 animate-pulse" />

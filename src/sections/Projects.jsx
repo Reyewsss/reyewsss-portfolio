@@ -43,8 +43,8 @@ function Projects() {
         "A Personal Portfolio website to display my projects and skills.",
       image: project3,
       techStack: ["React.js", "Tailwind CSS", "Framer Motion", "Spline"],
-      liveLink: "https://yourportfolio.com",
-      codeLink: "https://github.com/Reyewsss/portfolio-website-1",
+      liveLink: "https://reyewsss.github.io/reyewsss-portfolio/",
+      codeLink: "https://github.com/Reyewsss/reyewsss-portfolio",
     },
   ];
 
