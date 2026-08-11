@@ -23,17 +23,23 @@ function About() {
       <div className="max-w-5xl mx-auto w-full mt-8">
         <div className="scroll ml-6 relative grid grid-cols-1 sm:grid-cols-2 md:flex md:flex-row justify-items-center items-center gap-8 py-16 md:justify-center md:items-center">
           {images.map((img, i) => (
-            <img
+            <div
               key={i}
-              loading="lazy"
-              src={img.src}
-              alt={`Yeloe ${i + 1}`}
+              className={`relative rounded-xl overflow-hidden duration-500 ${
+                img.class
+              } ${i === 1 ? "-ml-0 md:-ml-16" : ""}`}
               style={{
                 transform: `rotate(${img.rotate}deg) translateY(${img.y}px)`,
                 justifySelf: "center",
               }}
-              className={`image-scroll w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 object-cover rounded-lg ${img.class} ${i === 1 ? "-ml-0 md:-ml-16" : ""}`}
-            />
+            >
+              <img
+                loading="lazy"
+                src={img.src}
+                alt={`Yeloe ${i + 1}`}
+                className={`image-scroll w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 object-cover transition-transform duration-500 ease-in-out hover:scale-110`}
+              />
+            </div>
           ))}
         </div>
         <div className="justify-start text-justify text-white mt-20">

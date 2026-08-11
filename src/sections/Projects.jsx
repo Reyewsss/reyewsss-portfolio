@@ -1,3 +1,4 @@
+// Projects.jsx
 import project1 from "../assets/images/yeloe.jpg";
 import project2 from "../assets/images/sheessentials-cosmetics.jpg";
 import project3 from "../assets/images/portfolio.jpg";
@@ -51,10 +52,11 @@ function Projects() {
   return (
     <section
       id="projects-section"
-      className="flex border-b border-white/10 shadow-lg items-center justify-center px-6"
+      className="border-b border-white/10 shadow-lg px-6 py-20"
     >
-      <div className="max-w-5xl mx-auto w-full mb-28 mt-28">
-        <div className="justify-start text-justify">
+      <div className="max-w-5xl mx-auto w-full">
+        {/* Header */}
+        <div className="justify-start mb-16">
           <h1 className="font-geist-mono text-base text-white/40 scroll">
             <span className="text-green-400">────</span> PROJECTS
           </h1>
@@ -65,74 +67,92 @@ function Projects() {
             Here are some of the projects I've worked on. Each one reflects my
             passion for creating meaningful digital experiences.
           </p>
-          {/* Projects Grid */}
-          <div className="font-geist grid grid-cols-1 md:grid-cols-3 gap-16 mt-10 text-white">
-            {projects.map((project) => (
-              <div key={project.id} className="flex flex-col">
-                {/* Image Container */}
-                <div
-                  className={`scroll max-w-sm rounded-xl overflow-hidden shadow-[0_0_60px_rgba(74,222,128,0.25)] transition-shadow duration-500`}
-                >
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
-                  />
-                </div>
+        </div>
 
-                {/* Project Info */}
-                <h1 className="text-2xl font-bold mt-8 text-white/80 scroll">
-                  {project.title}
-                </h1>
-                <p className="font-geist-mono text-xs scroll">{project.year}</p>
-                <p className="mt-2 text-sm text-white/60 scroll">
-                  {project.description}
-                </p>
-
-                {/* Tech Stack */}
-                <div className="mt-4 flex flex-wrap gap-2 text-xs">
-                  {project.techStack.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="scroll inline-block hover:text-green-400 hover:bg-green-400/20 transition-all duration-300 bg-gray-400/20 text-white/60 font-medium py-1 px-3 rounded"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Links */}
-                <div className="mt-6 flex gap-4">
-                  <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="scroll inline-flex items-center gap-2 text-sm text-white/80 hover:text-green-400 transition-colors duration-300 group"
-                  >
-                    <span>Live Demo</span>
-                    <FontAwesomeIcon
-                      icon={faExternalLinkAlt}
-                      className="text-xs group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
-                    />
-                  </a>
-                  <a
-                    href={project.codeLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="scroll inline-flex items-center gap-2 text-sm text-white/60 hover:text-green-400 transition-colors duration-300 group"
-                  >
-                    <span>Source Code</span>
-                    <FontAwesomeIcon
-                      icon={faCode}
-                      className="text-xs group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300"
-                    />
-                  </a>
+        {projects.map((project, index) => (
+          <div
+            key={project.id}
+            className={`group flex flex-col md:flex-row gap-8 md:gap-12 py-12 md:py-16 ${
+              index !== projects.length - 1 ? "border-b border-white/10" : ""
+            }`}
+          >
+            {/* Image Section */}
+            <div className="md:w-1/2">
+              <div className="scroll relative rounded-xl overflow-hidden shadow-[0_0_60px_rgba(74,222,128,0.15)] transition-shadow duration-500 group-hover:shadow-[0_0_80px_rgba(74,222,128,0.25)]">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                  className="w-full h-auto object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                />
+                {/* Year Badge */}
+                <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-sm px-3 py-1 rounded-full border border-white/10">
+                  <span className="font-geist-mono text-xs text-white/80">
+                    {project.year}
+                  </span>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* Content Section */}
+            <div className="md:w-1/2 flex flex-col justify-center">
+              {/* Project Number */}
+              <span className="scroll font-geist-mono text-sm text-green-400/60 mb-2">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+
+              {/* Title */}
+              <h3 className="scroll font-geist text-3xl md:text-4xl font-bold text-white group-hover:text-green-400 transition-colors duration-300">
+                {project.title}
+              </h3>
+
+              {/* Description */}
+              <p className="scroll font-geist text-white/60 leading-relaxed mt-4">
+                {project.description}
+              </p>
+
+              {/* Tech Stack */}
+              <div className="mt-6 flex flex-wrap gap-2">
+                {project.techStack.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="scroll font-geist-mono text-xs bg-white/10 hover:bg-green-500/20 text-white/60 hover:text-green-400 font-medium py-1.5 px-3 rounded-full transition-all duration-300 border border-white/5 hover:border-green-500/30"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Links */}
+              <div className="mt-8 flex gap-6">
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="scroll font-geist-mono inline-flex items-center gap-2 text-sm text-white/80 hover:text-green-400 transition-all duration-300 group/link"
+                >
+                  <span>Live Demo</span>
+                  <FontAwesomeIcon
+                    icon={faExternalLinkAlt}
+                    className="text-xs group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform duration-300"
+                  />
+                </a>
+                <a
+                  href={project.codeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="scroll font-geist-mono inline-flex items-center gap-2 text-sm text-white/50 hover:text-green-400 transition-all duration-300 group/link"
+                >
+                  <span>Source Code</span>
+                  <FontAwesomeIcon
+                    icon={faCode}
+                    className="text-xs group-hover/link:translate-x-1 group-hover/link:-translate-y transition-transform duration-300"
+                  />
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );
